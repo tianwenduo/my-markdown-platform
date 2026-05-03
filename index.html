@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 文件平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="header-left">
+                <h1><i class="fas fa-file-alt"></i> Markdown 编辑器</h1>
+            </div>
+            <div class="header-right">
+                <button id="new-file" class="btn btn-primary"><i class="fas fa-plus"></i> 新建</button>
+                <button id="open-file" class="btn btn-secondary"><i class="fas fa-folder-open"></i> 打开</button>
+                <button id="save-file" class="btn btn-primary"><i class="fas fa-save"></i> 保存</button>
+                <button id="rename-file" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> 重命名</button>
+                <button id="save-as" class="btn btn-secondary"><i class="fas fa-download"></i> 另存为</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <span><i class="fas fa-edit"></i> 编辑</span>
+                </div>
+                <textarea id="editor" placeholder="在这里输入 Markdown 内容..."></textarea>
+            </div>
+            
+            <div class="preview-panel">
+                <div class="panel-header">
+                    <span><i class="fas fa-eye"></i> 预览</span>
+                </div>
+                <div id="preview" class="preview-content"></div>
+            </div>
+        </div>
+
+        <div class="file-info">
+            <span id="filename">未命名.md</span>
+            <span id="status">已保存</span>
+        </div>
+
+        <input type="file" id="file-input" accept=".md" style="display: none;">
+        <a id="download-link" style="display: none;"></a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
